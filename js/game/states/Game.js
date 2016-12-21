@@ -79,19 +79,19 @@ Welpworld.Game.prototype = {
   movimentoJogador1: function() {
     
     if(jogo.teclaPressionada("w")){
-        jogo.definirVelocidadeY(this.jogador1, -this.velocidadeJogador);
+        jogo.definirVelocidadeY(this.jogador1, -this.velocidadeXJogador);
      }else if (jogo.teclaPressionada("s")){
-       jogo.definirVelocidadeY(this.jogador1, this.velocidadeJogador);
+       jogo.definirVelocidadeY(this.jogador1, this.velocidadeXJogador);
      }else{
         jogo.definirVelocidadeY(this.jogador1,0);
      }
 
      if(jogo.teclaPressionada("a"))  {
-       jogo.definirVelocidadeX(this.jogador1, -this.velocidadeJogador);
+       jogo.definirVelocidadeX(this.jogador1, -this.velocidadeXJogador);
        jogo.espelharSprite(this.jogador1,"esquerda");
      }else if(jogo.teclaPressionada("d") && this.jogador1.x < this.movimentoMaximoX)  {
         jogo.espelharSprite(this.jogador1,"direita");
-        jogo.definirVelocidadeX(this.jogador1, this.velocidadeJogador);
+        jogo.definirVelocidadeX(this.jogador1, this.velocidadeXJogador);
      }else {
         jogo.definirVelocidadeX(this.jogador1,0);
         jogo.espelharSprite(this.jogador1,"direita");
@@ -112,19 +112,19 @@ Welpworld.Game.prototype = {
  movimentoJogador2: function() {
   
   if(jogo.teclaPressionada("cima")){
-      jogo.definirVelocidadeY(this.jogador2, -this.velocidadeJogador);
+      jogo.definirVelocidadeY(this.jogador2, -this.velocidadeXJogador);
     }else if (jogo.teclaPressionada("baixo")){
-      jogo.definirVelocidadeY(this.jogador2, this.velocidadeJogador);
+      jogo.definirVelocidadeY(this.jogador2, this.velocidadeXJogador);
     }else{
       jogo.definirVelocidadeY(this.jogador2,0);
     }
 
     if(jogo.teclaPressionada("esquerda") && this.jogador2.x > jogo.larguraTela()-this.movimentoMaximoX)  {
-      jogo.definirVelocidadeX(this.jogador2, -this.velocidadeJogador);
+      jogo.definirVelocidadeX(this.jogador2, -this.velocidadeXJogador);
       jogo.espelharSprite(this.jogador2,"esquerda");
     }else if(jogo.teclaPressionada("direita") )  {
       jogo.espelharSprite(this.jogador2,"direita");
-      jogo.definirVelocidadeX(this.jogador2, this.velocidadeJogador);
+      jogo.definirVelocidadeX(this.jogador2, this.velocidadeXJogador);
     }else {
       jogo.definirVelocidadeX(this.jogador2,0);
       jogo.espelharSprite(this.jogador2,"esquerda");
